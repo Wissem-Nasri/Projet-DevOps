@@ -59,5 +59,49 @@ sudo apt-get install jenkins
 ![image](https://github.com/user-attachments/assets/adfdbc0f-9893-47ef-806f-1becc324273f)
 #### creation d'une nouvelle instance Jenkins-Agent
 ![image](https://github.com/user-attachments/assets/d8526795-d4f7-40df-abb3-56f89eb49817)
+#### on va installer java et assurer la connexion sur 8080 ici aussi 
+#### installation docker 
+sudo apt-get install docker.io
+![image](https://github.com/user-attachments/assets/98d555ef-b583-4c4b-b875-b4c006eb8299)
+![image](https://github.com/user-attachments/assets/1131cd55-1a71-4d1c-a419-42c793227107)
+#### inJenkins-Agent
+![image](https://github.com/user-attachments/assets/506d6a4c-6293-4977-a0a2-ae3ed151822b)
+#### in Jenkins-Master
+![image](https://github.com/user-attachments/assets/702ecc0f-ce6c-4d2c-9db2-8753c3be89de)
+#### generer key
+![image](https://github.com/user-attachments/assets/bf68ca05-60c0-4fe9-adfc-c4ff9c834145)
 
+copier pub key of master in auth of agent
+![image](https://github.com/user-attachments/assets/2922b134-58c8-4486-8cf6-a5b65378ea68)
+![image](https://github.com/user-attachments/assets/d7a518b4-a8ae-4bb9-8008-39ae6d5dab39)
+page web Jenkins-Master
+![image](https://github.com/user-attachments/assets/64d2bfb8-1054-497c-94fc-e38d23704f3b)
+pass
+![image](https://github.com/user-attachments/assets/65cdf149-689f-472b-a2f8-427846327641)
+plugin instalation 
+![image](https://github.com/user-attachments/assets/5b2667bc-89d0-4364-a632-d69b99f9e0eb)
+# Jenkins
+![image](https://github.com/user-attachments/assets/5637c5f2-3d13-409d-8979-ec03ae1f0bca)
 
+#### copier private key of master jenkins when we create nodes 
+![image](https://github.com/user-attachments/assets/95c58bd5-6403-4552-a775-ba901b717f71)
+#### add nodes 
+![image](https://github.com/user-attachments/assets/e41cb523-5c92-4fe1-8c1f-62784dbd7dae)
+#### c'est ca 
+![image](https://github.com/user-attachments/assets/eb2ea2a7-5bf5-40fc-b7fa-37b631d24b27)
+#### adding node (Jenkins-Agent)
+![image](https://github.com/user-attachments/assets/cfb98d4a-e36d-4102-95df-0d9698297404)
+#### testing Jenkins fonct
+![image](https://github.com/user-attachments/assets/135694c4-f572-4721-b7cf-751369a60fb7)
+# Integrate maven to Jekins and add github credentials to jenkins
+#### install plugin
+![image](https://github.com/user-attachments/assets/8fcb0457-b67a-48e0-988c-586c79619693)
+#### install maven
+![image](https://github.com/user-attachments/assets/19624137-4396-40fe-9071-64e93584b0cd)
+#### install jdk
+![image](https://github.com/user-attachments/assets/e9ee7034-02a4-4094-b59f-ef175ac30e2f)
+#### integration of github
+![image](https://github.com/user-attachments/assets/200dc54d-001f-4a9c-8a2e-61644662ac9b)
+# Create pipline script for build and test artifacts and create ci job on jenkins
+#### import script of app from github 
+![image](https://github.com/user-attachments/assets/618e9c7f-9041-4d9d-87f3-a87a4dcffa69)
