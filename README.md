@@ -38,3 +38,26 @@ L'instance EC2 nous offre un serveur cloud évolutif pour héberger nos services
 
 ![image](https://github.com/user-attachments/assets/27a96cc4-1795-4ef7-8dae-0647436fd09a)
 ![image](https://github.com/user-attachments/assets/c32e8834-43c6-4419-9019-380e0cbc4b4c)
+#### instalation java 
+sudo apt install openjdk-17-jre 
+![image](https://github.com/user-attachments/assets/ee92ca85-daa3-4717-b87e-9814918ca4c2)
+
+#### jenkins work in port 8080
+![image](https://github.com/user-attachments/assets/81e55caa-20d9-4612-9a70-76c0014c2b37)
+#### installer jenkins 
+##### link to the page off of Jenkins
+https://www.jenkins.io/doc/book/installing/linux/#debianubuntu
+##### command to download Jenkins 
+curl -fsSL https://pkg.jenkins.io/debian/jenkins.io-2023.key | sudo tee \
+  /usr/share/keyrings/jenkins-keyring.asc > /dev/null
+echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] \
+  https://pkg.jenkins.io/debian binary/ | sudo tee \
+  /etc/apt/sources.list.d/jenkins.list > /dev/null
+sudo apt-get update
+sudo apt-get install jenkins
+#### le bon fonct de Jenkins
+![image](https://github.com/user-attachments/assets/adfdbc0f-9893-47ef-806f-1becc324273f)
+#### creation d'une nouvelle instance Jenkins-Agent
+![image](https://github.com/user-attachments/assets/d8526795-d4f7-40df-abb3-56f89eb49817)
+
+
