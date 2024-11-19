@@ -103,5 +103,35 @@ plugin instalation
 #### integration of github
 ![image](https://github.com/user-attachments/assets/200dc54d-001f-4a9c-8a2e-61644662ac9b)
 # Create pipline script for build and test artifacts and create ci job on jenkins
-#### import script of app from github 
+## pipline script
+#### import script of app from my github 
 ![image](https://github.com/user-attachments/assets/618e9c7f-9041-4d9d-87f3-a87a4dcffa69)
+#### validation of steps 
+![image](https://github.com/user-attachments/assets/3c2fa369-0e0c-4860-a119-e0275b439d99)
+## scm
+![image](https://github.com/user-attachments/assets/cc433d39-5222-4907-b49a-8f05523e4556)
+![image](https://github.com/user-attachments/assets/e34efcee-244d-4c63-b419-c355676fd1ca)
+![image](https://github.com/user-attachments/assets/b3f29df0-83a6-4c2a-af67-07a257c35c98)
+# sonarqube install and configure 
+#### create instance
+difference of other 
+![image](https://github.com/user-attachments/assets/d51cd699-b5e4-4b3b-ac28-76c293fd6c8b)
+Elastic ip et private 
+![image](https://github.com/user-attachments/assets/7b5cfb43-0c6b-4216-8bab-53daac8a08d2)
+
+#### Add PostgresSQL repository
+$ sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
+$ wget -qO- https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo tee /etc/apt/trusted.gpg.d/pgdg.asc &>/dev/null
+![image](https://github.com/user-attachments/assets/0543c9d2-5c3e-4b3a-89da-ba8c8bf10f8c)
+#### Install PostgreSQL
+$ sudo apt update
+$ sudo apt-get -y install postgresql postgresql-contrib
+$ sudo systemctl enable postgresql
+![image](https://github.com/user-attachments/assets/8f3b1593-8a1c-47fc-a857-4f8a19ef1804)
+#### Create Database for Sonarqube
+![image](https://github.com/user-attachments/assets/146b640d-1390-44c0-b52c-34c39e396cd3)
+#### Add Adoptium repository
+![image](https://github.com/user-attachments/assets/8cf6f551-9072-4e03-873c-0c2f76bc29ae)
+####install java 
+![image](https://github.com/user-attachments/assets/07a90c24-9edf-4559-b297-3160ebea19de)
+
