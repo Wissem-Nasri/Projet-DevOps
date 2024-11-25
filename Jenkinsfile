@@ -61,13 +61,14 @@ pipeline {
             }
         }
         stage("Trivy Scan") {
-            steps {
-                script {
-
-		        sh 'trivy ${IMAGE_NAME}:${IMAGE_TAG}'
-                  }
+         steps {
+            script {
+            // Exécute l'analyse Trivy sur l'image Docker
+            sh "trivy image --no-progress --exit-code 1 --severity HIGH,CRITICAL ${IMAGE_NAME}:${IMAGE_TAG}"
+               }
             }
         }
+
         stage("Push Docker Image") {
             steps {
                 script {
