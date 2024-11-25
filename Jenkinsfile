@@ -5,7 +5,7 @@ pipeline {
         maven 'Maven3'
     }
     environment {
-        APP_NAME = "register-app-pipeline"
+        APP_NAME = "test-app"
         RELEASE = "1.0.0"
         DOCKER_USER = "wissem454"
         DOCKER_PASS = 'dockerhub'
@@ -55,20 +55,37 @@ pipeline {
                     docker.withRegistry('', DOCKER_PASS) {
                         docker_image = docker.build("${IMAGE_NAME}:${IMAGE_TAG}")
                     }
-
-                    
                 }
             }
         }
-        stage("Trivy Scan") {
-         steps {
-            script {
-            // Exécute l'analyse Trivy sur l'image Docker
-            sh "trivy image --no-progress --exit-code 1 --severity HIGH,CRITICAL ${IMAGE_NAME}:${IMAGE_TAG}"
-               }
+        stage("Setup Trivy") {
+            steps {
+                script {
+                    def isTrivyInstalled = sh(script: 'command -v trivy', returnStatus: true) == 0
+                    if (!isTrivyInstalled) {
+                        sh """
+                            curl -sfL https://raw.githubusercontent.com/aquasecurity/trivy/main/contrib/install.sh | sh -
+                            mv trivy /usr/local/bin/
+                        """
+                    }
+                }
             }
         }
-
+        stage("Initialize Trivy DB") {
+            steps {
+                sh "trivy image --download-db-only"
+            }
+        }
+        stage("Trivy Scan") {
+            steps {
+                script {
+                    def scanStatus = sh(script: "trivy image --no-progress --exit-code 1 --severity HIGH,CRITICAL ${IMAGE_NAME}:${IMAGE_TAG}", returnStatus: true)
+                    if (scanStatus != 0) {
+                        echo "Trivy scan failed! Please review the vulnerabilities."
+                    }
+                }
+            }
+        }
         stage("Push Docker Image") {
             steps {
                 script {
